@@ -7,7 +7,7 @@ st.title("AVS6")
 google_api_key = "AIzaSyDFKimABSxzNoxKUrjtsoLzatpLDeqMxBk"
 
 # Read the Excel database of addresses into a DataFrame
-database_df = pd.read_excel('Project 2 Addresses mp.xlsx')
+database_df = pd.read_excel('Project_2_Addresses_mp.xlsx')
 
 # Initialize GoogleV3 geocoder
 geolocator = GoogleV3(api_key=google_api_key)
