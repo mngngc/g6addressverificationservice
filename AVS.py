@@ -1,7 +1,10 @@
 import streamlit as st
 import pandas as pd
+import pip
 from geopy.geocoders import GoogleV3
 from geopy.distance import geodesic
+
+pip.main (["install","openpyxl"])
 
 st.title("AVS6")
 google_api_key = "AIzaSyDFKimABSxzNoxKUrjtsoLzatpLDeqMxBk"
