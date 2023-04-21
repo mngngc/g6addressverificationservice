@@ -15,7 +15,7 @@ geolocator = GoogleV3(api_key=google_api_key)
 
 # Get the user-inputted address
 
-    st.text_input(
+st.text_input(
         "Enter Address To Verify",
         key="placeholder"
     )
