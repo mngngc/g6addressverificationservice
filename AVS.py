@@ -14,7 +14,7 @@ database_df = pd.read_excel('Project_2_Addresses_mp.xlsx')
 geolocator = GoogleV3(api_key=google_api_key)
 
 # Get the user-inputted address
-
+text_input = st.text_input
 st.text_input(
         "Enter Address To Verify",
         key="placeholder"
