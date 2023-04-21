@@ -1,25 +1,41 @@
 import streamlit as st
 import pandas as pd
-import pip
 from geopy.geocoders import GoogleV3
 from geopy.distance import geodesic
 
 pip.main (["install","openpyxl"])
-
 st.title("AVS6")
 google_api_key = "AIzaSyDFKimABSxzNoxKUrjtsoLzatpLDeqMxBk"
 
 # Read the Excel database of addresses into a DataFrame
-database_df = pd.read_excel('Project_2_Addresses_mp.xlsx')
+database_df = pd.read_excel('C:\Users\Mary\Desktop\AVS\Project_2_Addresses_mp.xlsx')
 
 # Initialize GoogleV3 geocoder
 geolocator = GoogleV3(api_key=google_api_key)
 
 # Get the user-inputted address
-user_address = input("Enter an address: ")
 
+col1, col2 = st.columns(2)
+with col1:
+    st.text_input(
+        "your address",
+        key="placeholder"
+    )
+
+with col2:
+    text_input = st.text_input(
+        "Enter address to verify",
+        label_visibility=st.session_state.visibiity,
+        disabled=st.session_state.disabled,
+        placeholder=st.session_state.placeholer,
+    )
+if text_input:
+    st.write("You entered:", text_input)
+    user_address = text_input
+    
 # Geocode the user-inputted address
 user_location = geolocator.geocode(user_address)
+
 
 # Iterate through the rows of the DataFrame and check for matches or close proximity
 for index, row in database_df.iterrows():
