@@ -14,9 +14,7 @@ database_df = pd.read_excel('Project_2_Addresses_mp.xlsx')
 geolocator = GoogleV3(api_key=google_api_key)
 
 # Get the user-inputted address
-if "visibility" not in st.session_state:
-    st.session_state.visibility = "visible"
-    st.session_state.disabled = False
+
 col1, col2 = st.columns(2)
 with col1:
     st.text_input(
@@ -27,8 +25,6 @@ with col1:
 with col2:
     text_input = st.text_input(
         "Enter address to verify",
-        label_visibility=st.session_state.visibiity,
-        disabled=st.session_state.disabled,
         placeholder=st.session_state.placeholer,
     )
 if text_input:
