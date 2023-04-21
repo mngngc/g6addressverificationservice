@@ -35,21 +35,21 @@ for index, row in database_df.iterrows():
         current_address = f"{row['Address 1']} {row['City']} {row['State']} {str(row['Zip'])}"
 
     if user_address.lower() == current_address.lower():
-        print("Exact match found: " + current_address)
+        st.write("Exact match found: " + current_address)
         break
 
     if not hasattr(user_location, "address"):
-      print("Address not found in Google.")
+      st.write("Address not found in Google.")
       quit()
 
     test_location = geolocator.geocode(current_address)
     distance = geodesic((user_location.latitude, user_location.longitude), (test_location.latitude, test_location.longitude)).miles
 
     if distance < 0.5: # If the distance between two addresses is less than 0.5 km, consider it a match
-        print(f"{user_address} is a match for {current_address}")
+        st.write(f"{user_address} is a match for {current_address}")
         break
     elif distance < 5: # If the distance is less than 5 km, suggest a correction
-        print(f"{user_address} is close to {current_address}. Did you mean {current_address}?")
+        st.write(f"{user_address} is close to {current_address}. Did you mean {current_address}?")
         break
 else:
-    print("No match found.")
+    st.write("No match found.")
