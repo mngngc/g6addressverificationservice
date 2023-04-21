@@ -15,17 +15,13 @@ geolocator = GoogleV3(api_key=google_api_key)
 
 # Get the user-inputted address
 
-col1, col2 = st.columns(2)
+col1= st.columns(1)
 with col1:
     st.text_input(
         "Enter Address To Verify",
         key="placeholder"
     )
 
-with col2:
-    text_input = st.text_input(
-        "Enter address to verify",
-    )
 if text_input:
     st.write("You entered:", text_input)
     user_address = text_input
