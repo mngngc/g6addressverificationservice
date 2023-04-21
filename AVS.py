@@ -3,8 +3,8 @@ import pandas as pd
 from geopy.geocoders import GoogleV3
 from geopy.distance import geodesic
 
-pip.main (["install","openpyxl"])
-st.title("AVS6")
+
+st.title("Address Verification Service")
 google_api_key = "AIzaSyDFKimABSxzNoxKUrjtsoLzatpLDeqMxBk"
 
 # Read the Excel database of addresses into a DataFrame
