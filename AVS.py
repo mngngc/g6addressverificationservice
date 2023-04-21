@@ -25,7 +25,6 @@ with col1:
 with col2:
     text_input = st.text_input(
         "Enter address to verify",
-        placeholder=st.session_state.placeholer,
     )
 if text_input:
     st.write("You entered:", text_input)
