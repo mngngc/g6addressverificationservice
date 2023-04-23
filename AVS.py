@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import fuzzywuzzy
 from geopy.geocoders import GoogleV3
 from geopy.distance import geodesic
 from fuzzywuzzy import fuzz
@@ -8,7 +9,7 @@ st.title("Address Verification Service")
 google_api_key = "AIzaSyDFKimABSxzNoxKUrjtsoLzatpLDeqMxBk"
 
 # Read the Excel database of addresses into a DataFrame
-database_df = pd.read_excel('F:/KSU/KSU Spring 2023/capstone/avs/Project 2 Addresses mp.xlsx')
+database_df = pd.read_excel('Project_2_Addresses_mp.xlsx')
 
 # Initialize GoogleV3 geocoder
 geolocator = GoogleV3(api_key=google_api_key)
