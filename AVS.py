@@ -1,9 +1,9 @@
 import streamlit as st
 import pandas as pd
-import fuzzywuzzy
+import fuzzywuzzy as fz
 from geopy.geocoders import GoogleV3
 from geopy.distance import geodesic
-from fuzzywuzzy import fuzz
+
 
 st.title("Address Verification Service")
 google_api_key = "AIzaSyDFKimABSxzNoxKUrjtsoLzatpLDeqMxBk"
