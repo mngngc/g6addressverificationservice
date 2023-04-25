@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-pip.main (["install","fuzzywuzzy"])
 import fuzzywuzzy
 from geopy.geocoders import GoogleV3
 from geopy.distance import geodesic
